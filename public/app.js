@@ -79,16 +79,17 @@ const loadTasks = async () => {
         ? '<span class="badge completed">Completed</span>'
         : '<span class="badge pending">Pending</span>';
 
-      const description = task.description ? task.description : '<em>No description</em>';
-
       taskCard.innerHTML = `
         <div class="card-header">
           <div>
-            <h3>${task.title}</h3>
+            <h3></h3>
           </div>
           ${completedBadge}
         </div>
-        <p>${description}</p>
+        <p></p>`;
+      taskCard.querySelector('h3').textContent = task.title;
+      taskCard.querySelector('p').textContent = task.description || 'No description';
+      taskCard.innerHTML += `
         <div class="meta">
           <span>Created: ${formatDate(task.createdAt)}</span>
           <span>Category: ${task.category || 'other'}</span>
