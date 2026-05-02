@@ -3,23 +3,17 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha tests --exit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/misbashaikh9/node_task_manager.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/misbashaikh9/node_task_manager/issues"
-  },
-  "homepage": "https://github.com/misbashaikh9/node_task_manager#readme",
-  "description": "",
   "dependencies": {
     "express": "^5.2.1",
     "mongoose": "^9.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mongodb-memory-server": "^11.1.0",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }

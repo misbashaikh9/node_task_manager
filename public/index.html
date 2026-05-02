@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div class="brand">
+        <h1>Task Manager</h1>
+        <p>Simple task creation, completion, edit, and delete—all in one place.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="refreshButton" type="button">Refresh Tasks</button>
+      </div>
+    </header>
+
+    <section class="task-panels">
+      <div class="panel create-panel">
+        <h2>Create New Task</h2>
+        <div id="message" class="message"></div>
+        <form id="createTaskForm">
+          <label>
+            Task Title
+            <input type="text" id="taskTitle" placeholder="Enter title" required />
+          </label>
+          <label>
+            Description
+            <textarea id="taskDescription" placeholder="Description (optional)"></textarea>
+          </label>
+          <label>
+            Due Date
+            <input type="date" id="taskDueDate" />
+          </label>
+          <label>
+            Category
+            <select id="taskCategory">
+              <option value="other">Other</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="shopping">Shopping</option>
+              <option value="health">Health</option>
+              <option value="education">Education</option>
+            </select>
+          </label>
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+
+      <div class="panel edit-panel hidden" id="editTaskSection">
+        <div class="edit-header">
+          <div>
+            <h2>Edit Task</h2>
+            <p>Update the title or description for an existing task.</p>
+          </div>
+          <button id="closeEditButton" class="text-button" type="button">Cancel</button>
+        </div>
+        <form id="editTaskForm">
+          <label>
+            Title
+            <input type="text" id="editTaskTitle" placeholder="Enter title" required />
+          </label>
+          <label>
+            Description
+            <textarea id="editTaskDescription" placeholder="Description (optional)"></textarea>
+          </label>
+          <label>
+            Due Date
+            <input type="date" id="editTaskDueDate" />
+          </label>
+          <label>
+            Category
+            <select id="editTaskCategory">
+              <option value="other">Other</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="shopping">Shopping</option>
+              <option value="health">Health</option>
+              <option value="education">Education</option>
+            </select>
+          </label>
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="task-list">
+      <div class="task-list-title">
+        <h2>All Tasks</h2>
+        <p id="taskCount">Loading tasks...</p>
+      </div>
+      <div id="taskList" class="tasks"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
